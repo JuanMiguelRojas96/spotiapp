@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
 })
 export class SpotifyService {
 
-  token = 'BQD3IjSD-B32XcBdG0e7alHczp2KTOeKvaPZ8czJ-KHk1xBTWry6KNEa1jjgPoMdXMSoKSWTOJBRVYaYCM9HtOcWFPjuO1W7PtEkoFksY_MY_dJlRnk'
+  token = 'BQB3PzztIkm9CKHveXk-B10CcRPvGss_NzbPzyhev9cG7bIYqE4eH6or0wDes4Rnk2mhZTa3t-Tv-CuupqMWu_40K8jB6go391FbI1sv1VwnMzswS8g'
 
   constructor(private http:HttpClient) {   }
 
