@@ -13,8 +13,14 @@ export class SearchComponent {
 
   loading : boolean;
 
+  error : boolean;
+
+  errorMessage : string;
+
   constructor(private spotify:SpotifyService) {
     this.loading = false;
+    this.error = false;
+    this.errorMessage = '';
   }
 
 
@@ -25,10 +31,17 @@ export class SearchComponent {
       this.artistas = [];
       this.loading = false;
     }else{
-      this.spotify.getArtista(termino).subscribe((data:any) => {
-        this.artistas = data;
-        this.loading = false;
-      })
+      this.spotify.getArtistas(termino).subscribe({
+        next: (data: any) => {
+          this.artistas = data;
+          this.loading = false;
+        },
+        error: (errorServicio) => {
+          this.loading = false;
+          this.error = true;
+          this.errorMessage = errorServicio.error.error.message;
+        }
+      });
     }
   }
 }

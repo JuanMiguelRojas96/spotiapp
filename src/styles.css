@@ -9,6 +9,14 @@ hr {
     border-color: white;
 }
 
+table {
+    color: white !important;
+}
+
+td {
+    vertical-align: middle !important;
+}
+
 .puntero {
     cursor: pointer;
 }
