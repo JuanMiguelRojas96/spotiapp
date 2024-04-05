@@ -6,22 +6,35 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+**Creador:** Juan Miguel Rojas  
+**Correo:** juan.noriega@correounivall.edu.co
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Descripción del Proyecto
 
-## Build
+Spotiapp es un proyecto desarrollado en Angular que tiene como objetivo principal el consumo de la API de Spotify con fines educativos y de aprendizaje. La aplicación permite explorar y obtener información sobre artistas, álbumes, canciones y listas de reproducción disponibles en la plataforma de Spotify.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Configuración del Token de Acceso
 
-## Running unit tests
+Para que Spotiapp funcione correctamente, es necesario realizar una configuración inicial en el archivo `spotify.service.ts`. Sigue los siguientes pasos:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Utiliza Postman u otra herramienta similar para realizar una petición POST a la siguiente URL: `https://accounts.spotify.com/api/token`.
 
-## Running end-to-end tests
+2. Configura el cuerpo (Body) de la solicitud como `x-www-form-urlencoded`, con los siguientes parámetros:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+   - **Key:** `grant_type`  
+     **Value:** `client_credentials`
+   
+   - **Key:** `client_id`  
+     **Value:** `0cf22002d6f1434789074c96b30c89fc`
+   
+   - **Key:** `client_secret`  
+     **Value:** `52e75b8fbbd44733abf125a58810da61`
 
-## Further help
+3. Al enviar la solicitud, recibirás una respuesta del servidor que incluirá un campo llamado `access_token`.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+4. Reemplaza el valor de la variable `token` en el archivo `spotify.service.ts` con el `access_token` obtenido en la respuesta anterior.
+
+Con esta configuración, Spotiapp estará listo para consumir la API de Spotify y brindar una experiencia completa de exploración y descubrimiento musical.
+
+¡Disfruta explorando la música con Spotiapp! 🎵🎶
+
